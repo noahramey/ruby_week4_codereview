@@ -1,9 +1,11 @@
-<h1>Brands</h1>
+<div class="row center">
+  <h1>Brands</h1>
 
-<ul>
-  <% @brands.each() do |brand| %>
-    <li><a href="/brands/<%= brand.id() %>"><%= brand.name() %></a></li>
-  <% end %>
-</ul>
+  <div class="collection">
+    <% @brands.each() do |brand| %>
+      <a class="collection-item amber-text" href="/brands/<%= brand.id() %>"><%= brand.name() %></a>
+    <% end %>
+  </div>
 
-<a href="/brands/new">Add a Shoe Brand</a>
+  <a class="btn-large teal darken-1" href="/brands/new">Add a Shoe Brand</a>
+</div>

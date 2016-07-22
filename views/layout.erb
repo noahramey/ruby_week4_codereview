@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Shoe Distribution</title>
+    <title>Noah's Shoe Distribution</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="<%= url('css/materialize.min.css') %>"  media="screen,projection"/>
+    <link rel="stylesheet" href="<%= url('css/styles.css') %>" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Noah's Shoe Distribution</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/brands">Brands</a></li>
+          <li><a href="/stores">Stores</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="<%= url('js/materialize.min.js') %>"></script>
   </body>
 </html>

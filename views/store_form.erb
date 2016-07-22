@@ -1,18 +1,21 @@
 <h1>Create a New Shoe Store</h1>
 
 <form action="/stores" method="post">
-  <div>
-    <label for="name">Store Name:</label>
+  <div class="input-field">
     <input type="text" name="name" id="name">
+    <label for="name">Store Name:</label>
   </div>
 
   <div class="">
     <p>Select the brands available at this store:</p>
     <% @brands.each() do |brand| %>
-      <label for="<%= brand.id() %>"><%= brand.name() %></label>
-      <input type="checkbox" name="<%= brand.id() %>" id="<%= brand.id() %>" value="<%= brand.id() %>"><br>
+      <div class="input-field">
+        <input type="checkbox" name="<%= brand.id() %>" id="<%= brand.id() %>" value="<%= brand.id() %>">
+        <label for="<%= brand.id() %>"><%= brand.name() %></label>
+      </div>
+      <br>
     <% end %>
   </div>
 
-  <button type="submit">Create</button>
+  <button class="btn" type="submit">Create</button>
 </form>

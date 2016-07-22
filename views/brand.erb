@@ -1,11 +1,14 @@
 <h1><%= @brand.name() %></h1>
 
-<ul>
-  <p>Stores you can find this brand in:</p>
+<h5 class="teal-text darken-2">Stores you can find this brand in:</h5>
+<div class="row">
+  <div class="collection col s5">
   <% @brand.stores().each() do |store| %>
-    <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
+    <a class="collection-item black-text" href="/stores/<%= store.id() %>"><%= store.name() %></a>
   <% end %>
-</ul>
+  </div>
+</div>
 
-<a href="/">Back to Home</a>
-<a href="/brands">Back to all Brands</a>
+<a class="amber-text" href="/">Back to Home</a>
+<br>
+<a class="orange-text" href="/brands">Back to all Brands</a>

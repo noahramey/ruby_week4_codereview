@@ -1,9 +1,11 @@
-<h1>Shoe Stores</h1>
+<div class="row center">
+  <h1>Shoe Stores</h1>
 
-<ul>
-  <% @stores.each() do |store| %>
-    <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
-  <% end %>
-</ul>
+  <div class="collection">
+    <% @stores.each() do |store| %>
+    <a class="collection-item amber-text" href="/stores/<%= store.id() %>"><%= store.name() %></a>
+    <% end %>
+  </div>
 
-<a href="/stores/new">Add a Shoe Store</a>
+  <a class="btn-large teal darken-2" href="/stores/new">Add a Shoe Store</a>
+</div>
