@@ -1,0 +1,10 @@
+<h1><%= @brand.name() %></h1>
+
+<ul>
+  <% @brand.stores().each() do |store| %>
+    <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/">Back to Home</a>
+<a href="/brands">Back to all Brands</a>

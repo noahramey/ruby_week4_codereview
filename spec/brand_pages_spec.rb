@@ -13,4 +13,10 @@ describe('the brand path', { type: :feature }) do
     click_on('Create')
     expect(page).to have_content('Nike')
   end
+
+  it('should show errors if you dont enter a name') do
+    visit('/brands/new')
+    click_on('Create')
+    expect(page).to have_content('Oops!')
+  end
 end
