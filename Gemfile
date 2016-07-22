@@ -8,7 +8,7 @@ gem('sinatra')
 
 group(:test) do
   gem('rspec')
-  gem('shoulda-matchers')
+  gem 'shoulda-matchers', '~> 2.0'
   gem('capybara')
   gem('pry')
 end
