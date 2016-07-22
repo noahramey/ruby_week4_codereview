@@ -43,11 +43,6 @@ get('/stores/new') do
   erb(:store_form)
 end
 
-get('/stores/:id') do
-  @store = Store.find(params[:id])
-  erb(:store)
-end
-
 post('/stores') do
   @brands = Brand.all()
   name = params[:name]
@@ -64,5 +59,36 @@ post('/stores') do
   else
     erb(:store_error)
   end
+end
 
+get('/stores/:id') do
+  @store = Store.find(params[:id])
+  erb(:store)
+end
+
+get('/stores/:id/edit') do
+  @store = Store.find(params[:id])
+  @brands = Brand.all()
+  erb(:store_edit)
+end
+
+patch('/stores/:id') do
+  @store = Store.find(params[:id])
+  @brands = Brand.all()
+  name = params[:name]
+  @brands.each() do |brand|
+    brand_id = params["#{brand.id()}"]
+    if brand_id
+      brand = Brand.find((brand_id).to_i())
+      @store.brands.push(brand)
+    end
+  end
+  @store.update({name: name})
+  redirect("/stores/#{@store.id()}")
+end
+
+delete('/stores/:id') do
+  @store = Store.find(params[:id])
+  @store.destroy()
+  redirect('/stores')
 end

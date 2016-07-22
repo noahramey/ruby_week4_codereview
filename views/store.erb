@@ -1,10 +1,19 @@
 <h1><%= @store.name() %></h1>
 
 <ul>
+  <p>Available Brands:</p>
   <% @store.brands().each() do |brand| %>
-    <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
+    <li><a href="/brands/<%= brand.id() %>"><%= brand.name() %></a></li>
   <% end %>
 </ul>
 
 <a href="/">Back to Home</a>
 <a href="/stores">Back to all Stores</a>
+<br>
+<a href="/stores/<%= @store.id() %>/edit">Edit</a>
+<br>
+<br>
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" name="button">Delete</button>
+</form>

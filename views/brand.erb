@@ -1,6 +1,7 @@
 <h1><%= @brand.name() %></h1>
 
 <ul>
+  <p>Stores you can find this brand in:</p>
   <% @brand.stores().each() do |store| %>
     <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
   <% end %>

@@ -1,0 +1,20 @@
+<h2>Edit "<%= @store.name() %>"</h2>
+
+<form action="/stores/<%= @store.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="<%= @store.name() %>">
+
+  <div class="">
+    <h4>Add a brand to this store:</h4>
+    <% @brands.each() do |brand| %>
+      <% if @store.brands().include?(brand) == false %>
+        <label for="<%= brand.id() %>"><%= brand.name() %></label>
+        <input type="checkbox" name="<%= brand.id() %>" id="<%= brand.id() %>" value="<%= brand.id() %>">
+      <% end %>
+    <% end %>
+  </div>
+
+  <button type="submit" name="button">Update</button>
+</form>

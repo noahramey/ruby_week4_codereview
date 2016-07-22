@@ -9,8 +9,8 @@
   <div class="">
     <p>Select the brands available at this store:</p>
     <% @brands.each() do |brand| %>
-      <label for="<%= brand.name() %>"><%= brand.name() %></label>
-      <input type="checkbox" name="<%= brand.name() %>" id="<%= brand.name() %>" value="<%= brand.id() %>"><br>
+      <label for="<%= brand.id() %>"><%= brand.name() %></label>
+      <input type="checkbox" name="<%= brand.id() %>" id="<%= brand.id() %>" value="<%= brand.id() %>"><br>
     <% end %>
   </div>
 
