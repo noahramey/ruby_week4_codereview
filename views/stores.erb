@@ -1,0 +1,9 @@
+<h1>Shoe Stores</h1>
+
+<ul>
+  <% @stores.each() do |store| %>
+    <li><a href="/stores/<%= store.id() %>"><%= store.name() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/stores/new">Add a Shoe Store</a>
