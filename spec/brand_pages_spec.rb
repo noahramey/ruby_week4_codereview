@@ -1,7 +1,7 @@
 require('spec_helper')
 
 describe('the brand path', { :type => :feature }) do
-  
+
   it('should show all of the available brands') do
     test_brand = Brand.create({name: "Nike"})
     visit('/brands')
